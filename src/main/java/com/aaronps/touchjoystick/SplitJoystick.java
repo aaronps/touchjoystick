@@ -79,26 +79,29 @@ public class SplitJoystick implements View.OnTouchListener {
     }
 
     public final void setMetrics(int width, int height) {
+        final int small_side = Math.min(width, height);
+        final int large_side = Math.max(width, height);
+
         // this radius is for a total diameter of 2/3 of the screen, seems too big.
-//        final int baseRadius = ((Math.min(width, height) * 2) / 3) / 2;
+//        final int baseRadius = (small_side * 2) / 3) / 2;
 
         // this radius is for a total diameter of half of the screen.
-        final int baseRadius = Math.min(width, height) / 4;
+        final int baseRadius = small_side / 4;
 
-        final int middle = width / 2;
+        final int middle = large_side / 2;
 
         // baseRadius / 2 allows the user more freedom on the initial press
         final int toInset = baseRadius / 2;
 
         mJoystickRadius = baseRadius;
 
-        mLeftRect.set(0,0,middle,height);
-        mRightRect.set(middle,0,width,height);
+        mLeftRect.set(0,0,middle,small_side);
+        mRightRect.set(middle,0,large_side,small_side);
 
         mLeftRect.inset(toInset, toInset);
         mRightRect.inset(toInset, toInset);
 
-        Log.d(TAG, "setMetrics: " + width + "x" + height + " = " + mLeftRect);
+        Log.d(TAG, "setMetrics: " + large_side + "x" + small_side + " left = " + mLeftRect + " right = " + mRightRect);
     }
 
     @Override

@@ -1,10 +1,12 @@
 # touchjoystick - Touch Joystick library for Android
 
-Currently only one joystick defined: [SplitJoystick](#SplitJoystick).
+Currently only one joystick defined: SplitJoystick.
 
 ## Demo
 
-Demo @ [splitjoystick-demo](https://github.com/aaronps/touchjoystick-demo).
+Basic demo @ [touchjoystick-demo](https://github.com/aaronps/touchjoystick-demo).
+
+Demo with tank @ [mbtjoy-demo](https://github.com/aaronps/mbtjoy-demo).
 
 ## Usage
 
